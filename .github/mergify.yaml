@@ -1,0 +1,11 @@
+pull_request_rules:
+
+  - name: backport patches to v10.x branch
+    conditions:
+      - base=master
+      - label=A:backport/v10.x
+    actions:
+      merge:
+        method: squash
+        rebase_fallback: none
+      delete_head_branch: {}
